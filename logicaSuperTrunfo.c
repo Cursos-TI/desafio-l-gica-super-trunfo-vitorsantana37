@@ -24,39 +24,38 @@ int main() {
     // Variáveis para escolha de atributos
     int opcao1, opcao2;
 
-    // Menu interativo para escolher os dois atributos
-    do {
-        printf("\n===== MENU =====\n");
-        printf("Escolha o primeiro atributo para comparar:\n");
-        printf("1 - População\n");
-        printf("2 - Área\n");
-        printf("3 - PIB\n");
-        printf("4 - Número de Pontos Turísticos\n");
-        printf("5 - Densidade Demográfica\n");
-        printf("Escolha uma opção (1-5): ");
-        scanf("%d", &opcao1);
+    // Menu interativo para escolher o primeiro atributo
+    printf("\n===== MENU =====\n");
+    printf("Escolha o primeiro atributo para comparar:\n");
+    printf("1 - População\n");
+    printf("2 - Área\n");
+    printf("3 - PIB\n");
+    printf("4 - Número de Pontos Turísticos\n");
+    printf("5 - Densidade Demográfica\n");
+    printf("Escolha uma opção (1-5): ");
+    scanf("%d", &opcao1);
 
-        if (opcao1 < 1 || opcao1 > 5) {
-            printf("Opção inválida! Tente novamente.\n");
-        }
-    } while (opcao1 < 1 || opcao1 > 5);
+    // Validação da primeira escolha
+    if (opcao1 < 1 || opcao1 > 5) {
+        printf("Opção inválida! Tente novamente.\n");
+        return 0;
+    }
 
-    // Excluir a opção escolhida no primeiro menu para o segundo
-    do {
-        printf("\nEscolha o segundo atributo para comparar (diferente do primeiro):\n");
-        printf("1 - População\n");
-        printf("2 - Área\n");
-        printf("3 - PIB\n");
-        printf("4 - Número de Pontos Turísticos\n");
-        printf("5 - Densidade Demográfica\n");
-        printf("Escolha uma opção (1-5): ");
-        scanf("%d", &opcao2);
+    // Menu interativo para escolher o segundo atributo
+    printf("\nEscolha o segundo atributo para comparar (diferente do primeiro):\n");
+    printf("1 - População\n");
+    printf("2 - Área\n");
+    printf("3 - PIB\n");
+    printf("4 - Número de Pontos Turísticos\n");
+    printf("5 - Densidade Demográfica\n");
+    printf("Escolha uma opção (1-5): ");
+    scanf("%d", &opcao2);
 
-        // Verifica se a segunda opção é diferente da primeira
-        if (opcao2 == opcao1) {
-            printf("A opção escolhida não pode ser a mesma que a anterior! Tente novamente.\n");
-        }
-    } while (opcao2 == opcao1 || opcao2 < 1 || opcao2 > 5);
+    // Validação da segunda escolha
+    if (opcao2 == opcao1 || opcao2 < 1 || opcao2 > 5) {
+        printf("Opção inválida ou atributo repetido! Tente novamente.\n");
+        return 0;
+    }
 
     // Comparações e resultados
     int resultado1 = 0, resultado2 = 0;
